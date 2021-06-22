@@ -23,8 +23,8 @@ class negociosController extends Controller
             'descripcion' => 'required',
             'avenida' => 'required',
             'no_ext' => 'required',
-            'cp' => 'numeric|max:5',
-            'telefono' => 'required|max:10|numeric'
+            'cp' => 'required|max:5',
+            'telefono' => 'required|max:10'
         ];
 
         $detalle_mensaje= [
@@ -33,11 +33,11 @@ class negociosController extends Controller
             'avenida.required' => 'El campo avenida es requerido',
             'no_ext.required' => 'El campo Número Exterior es requerido',
             'cp.required' => 'El campo código postal es requerido',
-            'cp.max' => 'El campo código postal requiere un máximo de 5 carácteres',
             'telefono.required' => 'El campo teléfono es requerido',
-            'telefono.required' => 'El campo teléfono debe ingresar únicamente valores númericos',
             'telefono.max' => 'El campo teléfono requiere un máximo de 10 carácteres'
         ];
+
+        $this->validate($request, $rules, $detalle_mensaje);
 
         $nuevoNegocio = new Negocios();
 
