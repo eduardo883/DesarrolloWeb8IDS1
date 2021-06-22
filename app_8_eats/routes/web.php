@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/negocios',[negociosController::class,'listar']);
+Route::get('/negocios',[negociosController::class,'vista']);
+
+Route::get('/lista_negocios',[negociosController::class,'listar']);
+
+Route::post('/guardar_negocio',[negociosController::class,'guardar']);
 
 Auth::routes();
 

@@ -1861,9 +1861,97 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
+    this.obtener_negocios();
+  },
+  data: function data() {
+    return {
+      negocio: {},
+      v_error: '',
+      lista_negocios: {}
+    };
+  },
+  methods: {
+    guardarNegocio: function guardarNegocio() {
+      var _this = this;
+
+      axios.post('/guardar_negocio', this.negocio).then(function (response) {
+        console.log("OK");
+        _this.negocio = {};
+        _this.v_error = '';
+
+        _this.obtener_negocios();
+      })["catch"](function (error) {
+        _this.v_error = error.response.data.errors;
+        console.log(error.response);
+      });
+    },
+    obtener_negocios: function obtener_negocios() {
+      var _this2 = this;
+
+      axios.get('/lista_negocios').then(function (response) {
+        _this2.lista_negocios = response.data;
+      })["catch"](function (error) {
+        _this2.v_error = error.response.data.message;
+        console.log(error.response);
+      });
+    }
   }
 });
 
@@ -1901,7 +1989,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app_uttec'
 });
 
 /***/ }),
@@ -37421,32 +37509,268 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
+  return _c("form", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c(
+          "div",
+          { staticClass: "alert alert-default", attrs: { role: "alert" } },
+          [
+            _c("strong", [_vm._v("Valor Variable")]),
+            _vm._v(" " + _vm._s(_vm.v_error) + "\n")
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c(
+          "div",
+          { staticClass: "alert alert-default", attrs: { role: "alert" } },
+          [
+            _c(
+              "ul",
+              _vm._l(_vm.lista_negocios, function(v_negocio) {
+                return _c("li", [_vm._v(_vm._s(v_negocio.nombre))])
+              }),
+              0
+            )
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.nombre,
+                expression: "negocio.nombre"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "nombre",
+              placeholder: "Nombre del Negocio"
+            },
+            domProps: { value: _vm.negocio.nombre },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "nombre", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.descripcion,
+                expression: "negocio.descripcion"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "descripcion",
+              placeholder: "Descripción del Negocio"
+            },
+            domProps: { value: _vm.negocio.descripcion },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "descripcion", $event.target.value)
+              }
+            }
+          })
         ])
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.avenida,
+                expression: "negocio.avenida"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "avenida",
+              placeholder: "Avenida del Negocio"
+            },
+            domProps: { value: _vm.negocio.avenida },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "avenida", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.no_ext,
+                expression: "negocio.no_ext"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "no_ext",
+              placeholder: "No. Exterior del Negocio"
+            },
+            domProps: { value: _vm.negocio.no_ext },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "no_ext", $event.target.value)
+              }
+            }
+          })
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.no_int,
+                expression: "negocio.no_int"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "no_int",
+              placeholder: "No. Interior del Negocio"
+            },
+            domProps: { value: _vm.negocio.no_int },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "no_int", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.cp,
+                expression: "negocio.cp"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "cp",
+              placeholder: "Código Postal del Negocio"
+            },
+            domProps: { value: _vm.negocio.cp },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "cp", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.negocio.telefono,
+                expression: "negocio.telefono"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "telefono",
+              placeholder: "Teléfono Postal del Negocio"
+            },
+            domProps: { value: _vm.negocio.telefono },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.negocio, "telefono", $event.target.value)
+              }
+            }
+          })
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: { click: _vm.guardarNegocio }
+          },
+          [_vm._v("Guardar")]
+        )
+      ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
