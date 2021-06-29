@@ -18,11 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/negocios',[negociosController::class,'vista']);
-
 Route::get('/lista_negocios',[negociosController::class,'listar']);
 
+Route::post('/editar_negocio',[negociosController::class,'editar']);
+
 Route::post('/guardar_negocio',[negociosController::class,'guardar']);
+
+Route::delete('/eliminar_negocio/{id_negocio}',[negociosController::class,'eliminar']);
 
 Auth::routes();
 
@@ -40,5 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
 	 Route::get('icons', function () {return view('pages.icons');})->name('icons'); 
 	 Route::get('table-list', function () {return view('pages.tables');})->name('table');
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+	Route::get('/negocios',[negociosController::class,'vista'])->name('m.negocios');
 });
 

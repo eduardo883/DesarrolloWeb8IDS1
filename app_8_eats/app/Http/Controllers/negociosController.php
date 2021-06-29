@@ -16,6 +16,26 @@ class negociosController extends Controller
         return $negocios;
     }
 
+    public function editar(Request $request){
+        $negocio = Negocios::find($request->id);
+
+        $negocio->nombre = $request->nombre;
+        $negocio->descripcion = $request->descripcion;
+        $negocio->avenida = $request->avenida;
+        $negocio->no_ext = $request->no_ext;
+        $negocio->no_int = $request->no_int;
+        $negocio->cp = $request->cp;
+        $negocio->telefono = $request->telefono;
+
+        $negocio->save();
+
+    }
+
+    public function eliminar($id_negocio){
+        $negocio = Negocios::find($id_negocio);
+        $negocio->delete();
+    }
+
     public function guardar(Request $request){
 
         $rules =[
