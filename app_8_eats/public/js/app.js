@@ -2051,6 +2051,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2061,10 +2069,14 @@ __webpack_require__.r(__webpack_exports__);
       negocio: {},
       v_error: '',
       lista_negocios: {},
+      archivo: '',
       editando_negocio: false
     };
   },
   methods: {
+    getArchivo: function getArchivo(e) {
+      this.archivo = e.target.files[0];
+    },
     guardarNegocio: function guardarNegocio() {
       var _this = this;
 
@@ -2081,7 +2093,16 @@ __webpack_require__.r(__webpack_exports__);
         });
         this.editando_negocio = false;
       } else {
-        axios.post('/guardar_negocio', this.negocio).then(function (response) {
+        var datosNegocio = new FormData();
+        datosNegocio.set('nombre', this.negocio.nombre);
+        datosNegocio.set('descripcion', this.negocio.descripcion);
+        datosNegocio.set('avenida', this.negocio.avenida);
+        datosNegocio.set('no_ext', this.negocio.no_ext);
+        datosNegocio.set('no_int', this.negocio.no_int);
+        datosNegocio.set('cp', this.negocio.cp);
+        datosNegocio.set('telefono', this.negocio.telefono);
+        datosNegocio.set('archivo', this.archivo);
+        axios.post('/guardar_negocio', datosNegocio).then(function (response) {
           console.log("OK");
           _this.negocio = {};
           _this.v_error = '';
@@ -37740,91 +37761,86 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "table-responsive" }, [
-      _c(
-        "table",
-        { staticClass: "table align-items-center" },
-        [
-          _vm._m(1),
-          _vm._v(" "),
+      _c("table", { staticClass: "table align-items-center" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "tbody",
           _vm._l(_vm.lista_negocios, function(v_negocio) {
-            return _c("tbody", [
-              _c("tr", [
-                _c("th", { attrs: { scope: "row" } }, [
-                  _c("span", [_vm._v(" " + _vm._s(v_negocio.nombre) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c("span", [
-                    _vm._v(" " + _vm._s(v_negocio.descripcion) + " ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c("span", [_vm._v(" " + _vm._s(v_negocio.avenida) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c("span", [_vm._v(" " + _vm._s(v_negocio.no_ext) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c("span", [_vm._v(" " + _vm._s(v_negocio.no_int) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c("span", [_vm._v(" " + _vm._s(v_negocio.cp) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _c("span", [_vm._v(" " + _vm._s(v_negocio.telefono) + " ")])
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-right" }, [
-                  _c("div", { staticClass: "dropdown" }, [
-                    _vm._m(2, true),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "dropdown-menu dropdown-menu-right dropdown-menu-arrow"
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "dropdown-item",
-                            on: {
-                              click: function($event) {
-                                return _vm.editar_negocio(v_negocio)
-                              }
+            return _c("tr", [
+              _c("th", { attrs: { scope: "row" } }, [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.nombre) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.descripcion) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.avenida) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.no_ext) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.no_int) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.cp) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(" " + _vm._s(v_negocio.telefono) + " ")])
+              ]),
+              _vm._v(" "),
+              _c("td", { staticClass: "text-right" }, [
+                _c("div", { staticClass: "dropdown" }, [
+                  _vm._m(2, true),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "dropdown-menu dropdown-menu-right dropdown-menu-arrow"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item",
+                          on: {
+                            click: function($event) {
+                              return _vm.editar_negocio(v_negocio)
                             }
-                          },
-                          [_vm._v("Editar")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "dropdown-item",
-                            on: {
-                              click: function($event) {
-                                return _vm.eliminandoNegocio()
-                              }
+                          }
+                        },
+                        [_vm._v("Editar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item",
+                          on: {
+                            click: function($event) {
+                              return _vm.eliminandoNegocio()
                             }
-                          },
-                          [_vm._v("Eliminar")]
-                        )
-                      ]
-                    )
-                  ])
+                          }
+                        },
+                        [_vm._v("Eliminar")]
+                      )
+                    ]
+                  )
                 ])
               ])
             ])
-          })
-        ],
-        2
-      )
+          }),
+          0
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-4" }, [
@@ -37910,6 +37926,18 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("form", [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "file", accept: ".jpg" },
+                          on: { change: _vm.getArchivo }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-md-6" }, [
                       _c("div", { staticClass: "form-group" }, [
@@ -38303,7 +38331,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h4", { staticClass: "heading mt-4" }, [_vm._v("Atención!")]),
         _vm._v(" "),
-        _c("span", [_vm._v("¿Seguro que deseas eliminar este negocio?")])
+        _c("span", [_vm._v("¿Seguro que deseas eliminar este negocio ?")])
       ])
     ])
   },

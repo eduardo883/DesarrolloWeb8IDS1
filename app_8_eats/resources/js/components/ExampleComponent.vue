@@ -58,8 +58,8 @@
             <th scope="col">Acciones</th>
         </tr>
     </thead>
-    <tbody v-for="v_negocio in lista_negocios"> 
-        <tr>
+    <tbody> 
+        <tr v-for="v_negocio in lista_negocios">
             <th scope="row">
                 <span> {{ v_negocio.nombre }} </span>
             </th>
@@ -119,7 +119,7 @@
                 <div class="py-3 text-center">
                     <i class="ni ni-bell-55 ni-3x"></i>
                     <h4 class="heading mt-4">Atención!</h4>
-                    <span>¿Seguro que deseas eliminar este negocio?</span>
+                    <span>¿Seguro que deseas eliminar este negocio ?</span>
                 </div>
                 
             </div>
@@ -148,6 +148,14 @@
       <div class="modal-body">
         <form>
 
+
+          <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="file" class="form-control" accept=".jpg" @change="getArchivo">
+      </div>
+    </div>
+          </div>
         
 
   <div class="row">
@@ -215,10 +223,14 @@
                 negocio: {},
                 v_error: '',
                 lista_negocios: {},
+                archivo: '',
                 editando_negocio: false,
             }
         },
         methods: {
+            getArchivo(e){
+                this.archivo = e.target.files[0]
+            },
             guardarNegocio(){
 
 
@@ -237,7 +249,21 @@
                     })
                     this.editando_negocio = false
               }else{
-                axios.post('/guardar_negocio', this.negocio)
+
+                const datosNegocio = new FormData
+
+                datosNegocio.set('nombre', this.negocio.nombre)
+                datosNegocio.set('descripcion', this.negocio.descripcion)
+                datosNegocio.set('avenida', this.negocio.avenida)
+                datosNegocio.set('no_ext', this.negocio.no_ext)
+                datosNegocio.set('no_int', this.negocio.no_int)
+                datosNegocio.set('cp', this.negocio.cp)
+                datosNegocio.set('telefono', this.negocio.telefono)
+                datosNegocio.set('archivo', this.archivo)
+
+
+
+                axios.post('/guardar_negocio', datosNegocio)
                     .then((response) => {
                         console.log("OK")
                         this.negocio = {}
@@ -292,6 +318,7 @@
               $('#exampleModal').modal('toggle');
             },
             eliminandoNegocio(){
+              
               $('#modal-notification').modal('toggle');
             }
         }
