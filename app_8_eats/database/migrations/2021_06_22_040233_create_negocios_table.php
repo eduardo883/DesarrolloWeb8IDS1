@@ -23,6 +23,7 @@ class CreateNegociosTable extends Migration
             $table->string("no_int");
             $table->integer("cp");
             $table->string("telefono");
+            $table->string("ruta_archivo");
             
             $table->timestamps();
         });

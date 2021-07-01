@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Negocios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class negociosController extends Controller
 {
@@ -27,6 +28,10 @@ class negociosController extends Controller
         $negocio->cp = $request->cp;
         $negocio->telefono = $request->telefono;
 
+        if($request->file('archivo')->isValid()){
+            $negocio->ruta_archivo = $request->file('archivo')->store('negocios','public');
+        }
+
         $negocio->save();
 
     }
@@ -34,6 +39,15 @@ class negociosController extends Controller
     public function eliminar($id_negocio){
         $negocio = Negocios::find($id_negocio);
         $negocio->delete();
+    }
+
+    public function verArchivo($id_negocio){
+        
+        $negocio = Negocios::find($id_negocio);
+
+        $ruta = "public/" . $negocio->ruta_archivo;
+
+        return Storage::download($ruta);
     }
 
     public function guardar(Request $request){
@@ -68,6 +82,10 @@ class negociosController extends Controller
         $nuevoNegocio->no_int = $request->no_int;
         $nuevoNegocio->cp = $request->cp;
         $nuevoNegocio->telefono = $request->telefono;
+        if($request->file('archivo')->isValid()){
+            $nuevoNegocio->ruta_archivo = $request->file('archivo')->store('negocios','public');
+        }
+        
 
         $nuevoNegocio->save();
     }

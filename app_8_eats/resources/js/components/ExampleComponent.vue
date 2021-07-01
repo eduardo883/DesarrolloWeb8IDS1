@@ -59,9 +59,14 @@
         </tr>
     </thead>
     <tbody> 
+
+        <!-- <paginate> -->
+
         <tr v-for="v_negocio in lista_negocios">
             <th scope="row">
                 <span> {{ v_negocio.nombre }} </span>
+                <br>
+                <img :src="'/storage/' + negocio.ruta_archivo" width="100px">
             </th>
             <td>
                 <span> {{ v_negocio.descripcion }} </span>
@@ -150,11 +155,20 @@
 
 
           <div class="row">
-    <div class="col-md-6">
+            <div class="col-md-12">
       <div class="form-group">
-        <input type="file" class="form-control" accept=".jpg" @change="getArchivo">
+        <a :href="'descargar_archivo/' + negocio.id" id="verarchivo" target="verarchivo">Ver Archivo</a>
+        <br>
+        <img :src="'/storage/' + negocio.ruta_archivo" width="120px">
+      </div>
+      </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <input type="file" class="form-control" accept=".jpg,.pdf" @change="getArchivo">
       </div>
     </div>
+    
+    
           </div>
         
 
@@ -162,6 +176,7 @@
     <div class="col-md-6">
       <div class="form-group">
         <input type="text" class="form-control" v-model="negocio.nombre" id="nombre" placeholder="Nombre del Negocio">
+        
       </div>
     </div>
     <div class="col-md-6">
@@ -213,6 +228,9 @@
 </template>
 
 <script>
+
+    import VuePaginate from 'vue-paginate';
+
     export default {
         mounted() {
             console.log('Component mounted.')
@@ -225,6 +243,8 @@
                 lista_negocios: {},
                 archivo: '',
                 editando_negocio: false,
+                key_file: 0,
+                paginate: ['vpnegocios']
             }
         },
         methods: {
