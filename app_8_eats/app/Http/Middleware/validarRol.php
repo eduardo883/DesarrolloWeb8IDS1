@@ -19,8 +19,9 @@ class validarRol
         if($request->user()->rol == $rol){
             return $next($request);
         }else{
-            $mensaje = 'Acceso No Permitido a: ' . $request->user()->name;
-            abort(403, $mensaje);
+            // $mensaje = 'Acceso No Permitido a: ' . $request->user()->name;
+            // abort(403, $mensaje);
+            return redirect()->to('/home');
         }   
     }
 }

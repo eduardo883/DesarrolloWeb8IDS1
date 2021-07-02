@@ -131,15 +131,15 @@
                 </li>
                 @endcan
                 
-                
-                
-
+                @if(Auth::user()->can('mostrarmenu'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('m.negocios') }}">
                       <i class="ni ni-bullet-list-67 text-default"></i>
                       <span class="nav-link-text">Negocios 2</span>
                     </a>
                 </li>
+                @endif
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="ni ni-circle-08 text-pink"></i> {{ __('Register') }}
