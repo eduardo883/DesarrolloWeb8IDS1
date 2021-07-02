@@ -60,13 +60,13 @@
     </thead>
     <tbody> 
 
-        <!-- <paginate> -->
+        <paginate name="vpnegocios" :per="2" :list="lista_negocios"> 
 
-        <tr v-for="v_negocio in lista_negocios">
+        <tr v-for="v_negocio in paginated('vpnegocios')">
             <th scope="row">
                 <span> {{ v_negocio.nombre }} </span>
-                <br>
-                <img :src="'/storage/' + negocio.ruta_archivo" width="100px">
+                <!-- <br>
+                <img :src="'/storage/' + negocio.ruta_archivo" width="100px"> -->
             </th>
             <td>
                 <span> {{ v_negocio.descripcion }} </span>
@@ -98,12 +98,16 @@
                 </div>
             </td>
         </tr>
-        
+        </paginate>
     </tbody>
 </table>
 
 </div>
-
+<div class="card-footer py-4">
+  <nav aria-label="...">
+<paginate-links for="vpnegocios" :classes="{'ul':['pagination','justify-content-end','mb-0'], 'li':'page-item','a':'page-link'}"></paginate-links>
+</nav>
+</div>
 <!-- Fin de Tabla -->
 
 <div class="col-md-4">
@@ -225,6 +229,7 @@
 </div>
 
 </div>
+
 </template>
 
 <script>

@@ -121,10 +121,23 @@
                       <span class="nav-link-text">Tables</span>
                     </a>
                 </li>
+                
+                @can('mostrarmenu', Auth::user())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('m.negocios') }}">
                       <i class="ni ni-bullet-list-67 text-default"></i>
-                      <span class="nav-link-text">Negocios</span>
+                      <span class="nav-link-text">Negocios 1</span>
+                    </a>
+                </li>
+                @endcan
+                
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('m.negocios') }}">
+                      <i class="ni ni-bullet-list-67 text-default"></i>
+                      <span class="nav-link-text">Negocios 2</span>
                     </a>
                 </li>
                 <li class="nav-item">

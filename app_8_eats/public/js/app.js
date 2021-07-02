@@ -2076,6 +2076,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
@@ -37856,90 +37861,125 @@ var render = function() {
         _vm._v(" "),
         _c(
           "tbody",
-          _vm._l(_vm.lista_negocios, function(v_negocio) {
-            return _c("tr", [
-              _c("th", { attrs: { scope: "row" } }, [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.nombre) + " ")]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("img", {
-                  attrs: {
-                    src: "/storage/" + _vm.negocio.ruta_archivo,
-                    width: "100px"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.descripcion) + " ")])
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.avenida) + " ")])
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.no_ext) + " ")])
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.no_int) + " ")])
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.cp) + " ")])
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c("span", [_vm._v(" " + _vm._s(v_negocio.telefono) + " ")])
-              ]),
-              _vm._v(" "),
-              _c("td", { staticClass: "text-right" }, [
-                _c("div", { staticClass: "dropdown" }, [
-                  _vm._m(2, true),
+          [
+            _c(
+              "paginate",
+              {
+                attrs: { name: "vpnegocios", per: 2, list: _vm.lista_negocios }
+              },
+              _vm._l(_vm.paginated("vpnegocios"), function(v_negocio) {
+                return _c("tr", [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _c("span", [_vm._v(" " + _vm._s(v_negocio.nombre) + " ")])
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "dropdown-menu dropdown-menu-right dropdown-menu-arrow"
-                    },
-                    [
+                  _c("td", [
+                    _c("span", [
+                      _vm._v(" " + _vm._s(v_negocio.descripcion) + " ")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("span", [_vm._v(" " + _vm._s(v_negocio.avenida) + " ")])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("span", [_vm._v(" " + _vm._s(v_negocio.no_ext) + " ")])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("span", [_vm._v(" " + _vm._s(v_negocio.no_int) + " ")])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("span", [_vm._v(" " + _vm._s(v_negocio.cp) + " ")])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("span", [_vm._v(" " + _vm._s(v_negocio.telefono) + " ")])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-right" }, [
+                    _c("div", { staticClass: "dropdown" }, [
                       _c(
                         "a",
                         {
-                          staticClass: "dropdown-item",
-                          on: {
-                            click: function($event) {
-                              return _vm.editar_negocio(v_negocio)
-                            }
+                          staticClass: "btn btn-sm btn-icon-only text-light",
+                          attrs: {
+                            href: "#",
+                            role: "button",
+                            "data-toggle": "dropdown",
+                            "aria-haspopup": "true",
+                            "aria-expanded": "false"
                           }
                         },
-                        [_vm._v("Editar")]
+                        [_c("i", { staticClass: "fas fa-ellipsis-v" })]
                       ),
                       _vm._v(" "),
                       _c(
-                        "a",
+                        "div",
                         {
-                          staticClass: "dropdown-item",
-                          on: {
-                            click: function($event) {
-                              return _vm.eliminandoNegocio()
-                            }
-                          }
+                          staticClass:
+                            "dropdown-menu dropdown-menu-right dropdown-menu-arrow"
                         },
-                        [_vm._v("Eliminar")]
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item",
+                              on: {
+                                click: function($event) {
+                                  return _vm.editar_negocio(v_negocio)
+                                }
+                              }
+                            },
+                            [_vm._v("Editar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item",
+                              on: {
+                                click: function($event) {
+                                  return _vm.eliminandoNegocio()
+                                }
+                              }
+                            },
+                            [_vm._v("Eliminar")]
+                          )
+                        ]
                       )
-                    ]
-                  )
+                    ])
+                  ])
                 ])
-              ])
-            ])
-          }),
-          0
+              }),
+              0
+            )
+          ],
+          1
         )
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card-footer py-4" }, [
+      _c(
+        "nav",
+        { attrs: { "aria-label": "..." } },
+        [
+          _c("paginate-links", {
+            attrs: {
+              for: "vpnegocios",
+              classes: {
+                ul: ["pagination", "justify-content-end", "mb-0"],
+                li: "page-item",
+                a: "page-link"
+              }
+            }
+          })
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-4" }, [
@@ -37965,9 +38005,9 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "modal-content bg-gradient-danger" }, [
-                _vm._m(3),
+                _vm._m(2),
                 _vm._v(" "),
-                _vm._m(4),
+                _vm._m(3),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-footer" }, [
                   _c(
@@ -38021,7 +38061,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(5),
+              _vm._m(4),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("form", [
@@ -38397,25 +38437,6 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-sm btn-icon-only text-light",
-        attrs: {
-          href: "#",
-          role: "button",
-          "data-toggle": "dropdown",
-          "aria-haspopup": "true",
-          "aria-expanded": "false"
-        }
-      },
-      [_c("i", { staticClass: "fas fa-ellipsis-v" })]
-    )
   },
   function() {
     var _vm = this
