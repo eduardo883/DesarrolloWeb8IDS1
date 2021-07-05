@@ -64,9 +64,9 @@
 
         <tr v-for="v_negocio in paginated('vpnegocios')">
             <th scope="row">
-                <span> {{ v_negocio.nombre }} </span>
-                <!-- <br>
-                <img :src="'/storage/' + negocio.ruta_archivo" width="100px"> -->
+                <span> {{ v_negocio.nombre + ' '+ v_negocio.nombre_a}} </span>
+                <br>
+                <img :src="'/storage/' + negocio.ruta_archivo" width="120px"> 
             </th>
             <td>
                 <span> {{ v_negocio.descripcion }} </span>

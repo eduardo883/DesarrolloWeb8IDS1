@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\alimentosController;
 use App\Http\Controllers\negociosController;
 use App\Http\Middleware\validarRol;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/editar_negocio',[negociosController::class,'editar']);
 	Route::post('/guardar_negocio',[negociosController::class,'guardar']);
 	Route::delete('/eliminar_negocio/{id_negocio}',[negociosController::class,'eliminar']);
+
+	Route::get('/alimentos',[alimentosController::class,'vistalim'])->name('m.alimentos')->middleware('auth');
+	Route::get('/descargar_archivo/{id_alimento}',[negociosController::class,'verArchivo'])->name('m.verarchivo.alimento');
+	Route::get('/lista_alimentos',[alimentosController::class,'listaralim']);
+	Route::post('/editar_alimento',[alimentosController::class,'editaralim']);
+	Route::post('/guardar_alimento',[alimentosController::class,'guardaralim']);
+	Route::delete('/eliminar_alimento/{id_alimento}',[alimentosController::class,'eliminaralim']);
 });
 

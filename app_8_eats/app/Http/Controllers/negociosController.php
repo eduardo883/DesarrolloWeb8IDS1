@@ -13,7 +13,9 @@ class negociosController extends Controller
     }
 
     public function listar(){
-        $negocios = Negocios::all();
+        $negocios = Negocios::leftjoin('alimentos','alimentos.id_negocio','=','negocios.id')
+                            ->select('negocios.*','alimentos.nombre_a')
+                            ->get();
         return $negocios;
     }
 
