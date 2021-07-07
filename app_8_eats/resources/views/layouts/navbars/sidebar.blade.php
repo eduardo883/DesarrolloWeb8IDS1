@@ -115,12 +115,12 @@
                         <i class="ni ni-pin-3 text-orange"></i> {{ __('Maps') }}
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('table') }}">
                       <i class="ni ni-bullet-list-67 text-default"></i>
                       <span class="nav-link-text">Tables</span>
                     </a>
-                </li>
+                </li> -->
                 
                 @can('mostrarmenu', Auth::user())
                 <li class="nav-item">
@@ -140,11 +140,12 @@
                 </li>
                 @endif
 
+
                 @if(Auth::user()->can('mostrarmenu'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('m.negocios') }}">
+                    <a class="nav-link" href="{{ route('m.aviso') }}">
                       <i class="ni ni-bullet-list-67 text-default"></i>
-                      <span class="nav-link-text">Clientes</span>
+                      <span class="nav-link-text">Aviso de Privacidad</span>
                     </a>
                 </li>
                 @endif

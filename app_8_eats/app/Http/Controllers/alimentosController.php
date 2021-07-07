@@ -12,6 +12,10 @@ class alimentosController extends Controller
         return view('pages.alimentos');
     }
 
+    public function vistav(){
+        return view('pages.aviso');
+    }
+
     public function listaralim(){
         $alimentos = Alimentos::all();
         return $alimentos;

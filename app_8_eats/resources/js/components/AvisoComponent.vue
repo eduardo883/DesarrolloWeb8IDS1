@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-
+    <br>
     <p>De conformidad con lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y al capítulo VI del 
         Título V de las Políticas Corporativas Responsables en Protección de Datos, ponemos a su disposición nuestro
         Aviso de Privacidad WEB, con la finalidad de hacer de su conocimiento el tratamiento que daremos a sus Datos
@@ -44,7 +44,26 @@
 
     <p>II. DATOS PERSONALES QUE PODEMOS OBTENER: </p>
     <br>
-    <ul></ul>
+    <li>Nombre</li>
+    <li>Apellido Paterno</li>
+    <li>Apellido Materno</li>
+    <li>Correo Electrónico</li>
+    <li>Sexo</li>
+    <li>Domicilio</li>
+    <li>Teléfono</li>
+    <li>Edad</li>
+
+    <br>
+
+    <p>III. FINALIDADES DEL TRATAMIENTO DE SUS DATOS:</p>
+    <br>
+    <li>Dar cumplimiento a las obligaciones contraídas con nuestros clientes, empleados o proovedores.</li>
+    <li>Llevar a cabo los servicios relacionados con asesoría legal, mandato judicial, litigio, investigación judicial
+        teórica o práctica, administración de inmuebles, administración de condominios, adquisición, enajenación o arrendamiento de inmuebles,
+        asesoría contable o fiscal, contabilidad de personas físicas o jurídicas, planeación fiscal.
+    </li>
+    <li>Informar sobre cambios en el servicio.</li>
+    <li>Evaluar la calidad de servicio.</li>
 
     </div>
 </template>
