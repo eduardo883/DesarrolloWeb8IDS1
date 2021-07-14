@@ -47,7 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::delete('/eliminar_negocio/{id_negocio}',[negociosController::class,'eliminar']);
 
 	Route::get('/alimentos',[alimentosController::class,'vistalim'])->name('m.alimentos')->middleware('auth');
-	Route::get('/aviso',[alimentosController::class,'vistav'])->name('m.aviso')->middleware('auth');
 	Route::get('/descargar_archivo/{id_alimento}',[negociosController::class,'verArchivo'])->name('m.verarchivo.alimento');
 	Route::get('/lista_alimentos',[alimentosController::class,'listaralim']);
 	Route::post('/editar_alimento',[alimentosController::class,'editaralim']);

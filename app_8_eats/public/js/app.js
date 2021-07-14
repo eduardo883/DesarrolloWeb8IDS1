@@ -2359,7 +2359,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component('component-alimentos', __webpack_require__(/*! ./components/AlimentosComponent.vue */ "./resources/js/components/AlimentosComponent.vue").default);
 Vue.component('component-clientes', __webpack_require__(/*! ./components/ClientesComponent.vue */ "./resources/js/components/ClientesComponent.vue").default);
-Vue.component('component-aviso', __webpack_require__(/*! ./components/AvisoComponent.vue */ "./resources/js/components/AvisoComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37838,43 +37837,6 @@ component.options.__file = "resources/js/components/AlimentosComponent.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/AvisoComponent.vue":
-/*!****************************************************!*\
-  !*** ./resources/js/components/AvisoComponent.vue ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _AvisoComponent_vue_vue_type_template_id_37181b58___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AvisoComponent.vue?vue&type=template&id=37181b58& */ "./resources/js/components/AvisoComponent.vue?vue&type=template&id=37181b58&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
-  script,
-  _AvisoComponent_vue_vue_type_template_id_37181b58___WEBPACK_IMPORTED_MODULE_0__.render,
-  _AvisoComponent_vue_vue_type_template_id_37181b58___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/AvisoComponent.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/components/ClientesComponent.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/ClientesComponent.vue ***!
@@ -37993,23 +37955,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AlimentosComponent_vue_vue_type_template_id_4c0be5b0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AlimentosComponent_vue_vue_type_template_id_4c0be5b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AlimentosComponent.vue?vue&type=template&id=4c0be5b0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AlimentosComponent.vue?vue&type=template&id=4c0be5b0&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/AvisoComponent.vue?vue&type=template&id=37181b58&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/AvisoComponent.vue?vue&type=template&id=37181b58& ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AvisoComponent_vue_vue_type_template_id_37181b58___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AvisoComponent_vue_vue_type_template_id_37181b58___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AvisoComponent_vue_vue_type_template_id_37181b58___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AvisoComponent.vue?vue&type=template&id=37181b58& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AvisoComponent.vue?vue&type=template&id=37181b58&");
 
 
 /***/ }),
@@ -38350,157 +38295,6 @@ var staticRenderFns = [
           )
         ]
       )
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AvisoComponent.vue?vue&type=template&id=37181b58&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AvisoComponent.vue?vue&type=template&id=37181b58& ***!
-  \**************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "header bg-gradient-primary pt-5 pt-md-6" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "header pb-6" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "header-body" }, [
-                _c("div", { staticClass: "row align-items-center py-4" }, [
-                  _c("div", { staticClass: "col-lg-6 col-7" }, [
-                    _c(
-                      "h6",
-                      { staticClass: "h2 text-white d-inline-block mb-0" },
-                      [_vm._v("Aviso de Privacidad")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "nav",
-                      {
-                        staticClass: "d-none d-md-inline-block ml-md-4",
-                        attrs: { "aria-label": "breadcrumb" }
-                      },
-                      [
-                        _c(
-                          "ol",
-                          {
-                            staticClass:
-                              "breadcrumb breadcrumb-links breadcrumb-dark"
-                          },
-                          [
-                            _c("li", { staticClass: "breadcrumb-item" }, [
-                              _c("a", [_c("i", { staticClass: "fas fa-home" })])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "breadcrumb-item" }, [
-                              _c("a", [_vm._v("Inicio")])
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              {
-                                staticClass: "breadcrumb-item active",
-                                attrs: { "aria-current": "page" }
-                              },
-                              [_vm._v("Aviso de Privacidad")]
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "De conformidad con lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y al capítulo VI del \n        Título V de las Políticas Corporativas Responsables en Protección de Datos, ponemos a su disposición nuestro\n        Aviso de Privacidad WEB, con la finalidad de hacer de su conocimiento el tratamiento que daremos a sus Datos\n        Personales, así como los derechos que puede ejercer como titular de sus datos personales. Les solicitamos\n        leer cuidadosamente, ya que la sola disposición del presente Aviso de Privacidad sin que usted se oponga, \n        otorga su consentimiento tácito para permitirnos tratar sus datos personales con base a lo establecido en el presente Aviso de Privacidad: "
-        )
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [_vm._v(" I. RESPONSABLE DEL USO Y PROTECCIÓN DE SUS DATOS: ")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          " WeDev con domicilio en: Tecámac, Edo. de México y como responsable del tratamiento de sus datos personales, hace de su conocimiento \n        que todos sus datos personales son tratados de forma estrictamente confidencial por lo que al proporcionarlos, tales como: \n    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [_vm._v("II. DATOS PERSONALES QUE PODEMOS OBTENER: ")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("li", [_vm._v("Nombre")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Apellido Paterno")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Apellido Materno")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Correo Electrónico")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Sexo")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Domicilio")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Teléfono")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Edad")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [_vm._v("III. FINALIDADES DEL TRATAMIENTO DE SUS DATOS:")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v(
-          "Dar cumplimiento a las obligaciones contraídas con nuestros clientes, empleados o proovedores."
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v(
-          "Llevar a cabo los servicios relacionados con asesoría legal, mandato judicial, litigio, investigación judicial\n        teórica o práctica, administración de inmuebles, administración de condominios, adquisición, enajenación o arrendamiento de inmuebles,\n        asesoría contable o fiscal, contabilidad de personas físicas o jurídicas, planeación fiscal.\n    "
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Informar sobre cambios en el servicio.")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Evaluar la calidad de servicio.")])
     ])
   }
 ]
