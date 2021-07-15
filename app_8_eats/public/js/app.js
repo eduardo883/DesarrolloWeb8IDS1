@@ -39253,6 +39253,7 @@ var staticRenderFns = [
         staticClass: "form-control",
         attrs: {
           type: "text",
+          minlength: "16",
           id: "example-text-input",
           "data-openpay-card": "card_number"
         }

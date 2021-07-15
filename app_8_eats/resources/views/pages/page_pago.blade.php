@@ -12,8 +12,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        OpenPay.setId('mzdtln0bmtms6o3kck8f');
-        OpenPay.setApiKey('pk_f0660ad5a39f4912872e24a7a660370c');
+        OpenPay.setId('mrvvpagnemfnva98e3qu');
+        OpenPay.setApiKey('pk_a7cb7f4f7d6c4af7ba81b94e744895e2');
         OpenPay.setSandboxMode(true);
         //Se genera el id de dispositivo
         var deviceSessionId = OpenPay.deviceData.setup("payment-form", "deviceIdHiddenFieldName");

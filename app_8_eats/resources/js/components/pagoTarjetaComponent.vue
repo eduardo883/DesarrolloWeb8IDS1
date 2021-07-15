@@ -8,7 +8,7 @@
 
                 <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Número de Tarjeta</label>
-                    <input class="form-control" type="text" id="example-text-input" data-openpay-card="card_number">
+                    <input class="form-control" type="text" minlength="16" id="example-text-input" data-openpay-card="card_number">
                 </div>
                 <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Nombre</label>
